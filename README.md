@@ -18,8 +18,8 @@ Input:
 string =  "AABAACAADAABAABA"                                                                                              
         pat = "AABA"
 				
-Output: Pattern found at index 0
+Output: Pattern found at index 1
 
-  Pattern found at index 9
+  Pattern found at index 10
 				
-  Pattern found at index 12
+  Pattern found at index 13
