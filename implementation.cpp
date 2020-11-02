@@ -1,13 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-int main() {
-	string str, ptr;
-	cin>>str>>ptr;
-	int n=str.length();
+void Calculate_LPS(string str, string ptr, int* lps)
+{
+    int n=str.length();
 	int m = ptr.length();
-	int lps[n];
-	int i=1,j=0;
+    int i=1,j=0;
 	lps[0]=0;
 	while(i<m)
 	{
@@ -21,10 +18,14 @@ int main() {
 	    else
 	    j = lps[j-1];
 	}
-	
-	i=0,j=0;
-	vector<int> v;
-	while(i<n)
+}
+
+void FindPatternIndex(string str, string ptr, int* lps, vector<int> &v)
+{
+    int n=str.length();
+	int m = ptr.length();
+    int i=0,j=0;
+    while(i<n)
 	{
 	    if(j==m)
 	    {
@@ -52,6 +53,33 @@ int main() {
 	        v.push_back(i-j);
 	        
 	    }
-	for(int i=0;i<v.size();i++) cout<<v[i]<<" ";
+}
+int main() {
+	string str, ptr;
+	cin>>str>>ptr;
+	int n=str.length();
+	
+	// lps array stores Longest Proper prefix which is also a suffix upto that index in ptr string 
+	int lps[n];
+	
+	// Calculate_LPS finds lps of any given string
+	Calculate_LPS(str, ptr, lps);
+	int i=0,j=0;
+	
+	//vector v stores indexes at which given pattern is found
+	vector<int> v;
+	
+	// FInd the index at which pattern is found
+	FindPatternIndex(str, ptr, lps, v);
+	
+	
+	
+	//Print all indexes where pattern is found
+	for(int i=0;i<v.size();i++)
+	{   
+	    cout<<"Pattern found at index"<<" ";
+	    cout<<v[i]+1<<endl;
+	    
+	}
 	return 0;
 }
