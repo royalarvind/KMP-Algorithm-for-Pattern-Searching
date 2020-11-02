@@ -16,7 +16,7 @@ It is implemented in C++.
 
 Input:  
 string =  "AABAACAADAABAABA"                                                                                              
-        pat = "AABA"
+        pattern = "AABA"
 				
 Output:
 
