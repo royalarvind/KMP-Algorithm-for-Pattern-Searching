@@ -18,7 +18,9 @@ Input:
 string =  "AABAACAADAABAABA"                                                                                              
         pat = "AABA"
 				
-Output: Pattern found at index 1
+Output:
+
+  Pattern found at index 1
 
   Pattern found at index 10
 				
